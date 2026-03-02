@@ -1,0 +1,159 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  color: var(--text-primary);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #1e3a8a;
+}
+
+.btn-add {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #2563eb;
+  transform: scale(1.02);
+}
+
+.collection-section {
+  margin-bottom: 4rem;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: white;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background-color: #1e293b;
+  color: white;
+  border-color: #1e293b;
+}
+
+.filter-btn:hover:not(.active) {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1.4;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.book-info {
+  position: absolute;
+  bottom: 25px;
+  left: 10px;
+  right: 10px;
+}
+
+.book-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.book-info p {
+  font-size: 0.85rem;
+  color: white;
+}
+
+/* --- Gradients --- */
+.grad-0 {
+  background: linear-gradient(180deg, #6366f1, #a855f7);
+}
+.grad-1 {
+  background: linear-gradient(180deg, #2dd4bf, #0e7490);
+}
+.grad-2 {
+  background: linear-gradient(180deg, #fb923c, #ef4444);
+}
+.grad-3 {
+  background: linear-gradient(180deg, #1e293b, #334155);
+}
+.grad-4 {
+  background: linear-gradient(180deg, #22c55e, #15803d);
+}
+.grad-5 {
+  background: linear-gradient(180deg, #eab308, #b45309);
+}
+.grad-6 {
+  background: linear-gradient(180deg, #3b82f6, #1e40af);
+}
+.grad-7 {
+  background: linear-gradient(180deg, #ec4899, #be185d);
+}
+.grad-8 {
+  background: linear-gradient(180deg, #ec4848, #be5a18);
+}
+.grad-9 {
+  background: linear-gradient(180deg, #b2ec48, #abbe18);
+}
