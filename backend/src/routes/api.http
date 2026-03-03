@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:3000
+
+GET {{baseUrl}}/books
+###
+
+POST {{baseUrl}}/books
+content-type: application/json
+
+{
+    "title": "El Señor de los Anillos",
+    "author": "J.R.R. Tolkien",
+    "genre": "ficción",
+    "cover": "https://m.media-amazon.com/images/I/812-J43s3+L._AC_UF1000,1000_QL80_.jpg",
+    "content": "En un agujero en el suelo, vivía un hobbit. No un agujero húmedo, sucio y asqueroso, acabado en puntas de lombriz y olor a fango, ni tampoco un agujero seco, desnudo y arenoso, sin nada en qué sentarse o qué comer: era un agujero-hobbit, y eso significa comodidad."
+}
+

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import ReadModal from "./ReadModal";
+import CreateModal from "./CreateModal";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("All Books");
   const [books, setBooks] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState("");
 
   const filters = ["All Books", "ficción", "ciencia", "biografía", "historia"];
 
@@ -41,9 +42,22 @@ function App() {
     fetchBooks();
   }, []);
 
-  const openReadModal = (book) => {
+  const openModal = (modal, book = null) => {
+    setShowModal(modal);
     setSelectedBook(book);
-    setShowModal(true);
+  };
+
+  const CreateBook = async (data) => {
+    try {
+      const response = await axios.post(`http://localhost:3000/books`, data);
+      console.log("Libro creado:", response.data);
+      const books = await axios.get(`http://localhost:3000/books`);
+      setBooks(books.data);
+      console.log("Books: ", books.data);
+      setShowModal("");
+    } catch (error) {
+      console.error("Error al crear el libro:", error);
+    }
   };
 
   return (
@@ -52,7 +66,9 @@ function App() {
         <div className="logo-section">
           <h1 className="logo-text">Biblioteca</h1>
         </div>
-        <button className="btn-add">+ Añadir Libro</button>
+        <button className="btn-add" onClick={() => openModal("create")}>
+          + Añadir Libro
+        </button>
       </nav>
 
       <section className="collection-section">
@@ -77,7 +93,7 @@ function App() {
               <div
                 key={book.id}
                 className="book-card"
-                onClick={() => openReadModal(book)}
+                onClick={() => openModal("read", book)}
               >
                 <div className={`book-cover grad-${index % 10}`}>
                   <img src={book.cover} alt={book.title} />
@@ -91,8 +107,11 @@ function App() {
         </div>
       </section>
 
-      {showModal && selectedBook && (
-        <ReadModal book={selectedBook} onClose={() => setShowModal(false)} />
+      {showModal === "read" && selectedBook && (
+        <ReadModal book={selectedBook} onClose={() => setShowModal("")} />
+      )}
+      {showModal === "create" && (
+        <CreateModal onClose={() => setShowModal("")} onSave={CreateBook} />
       )}
     </div>
   );

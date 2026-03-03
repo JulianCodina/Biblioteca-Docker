@@ -10,14 +10,16 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   try {
-    const { title, author, date, genre, content } = req.body;
+    const { title, author, cover, genre, content } = req.body;
 
-    if (!title || !author || !date || !genre || !content) {
+    if (!title || !author || !cover || !genre || !content) {
       return res.status(400).json({
         success: false,
         error: "Missing required fields",
       });
     }
+
+    createBook(title, author, genre, cover, content);
 
     res.status(201).json({
       success: true,
