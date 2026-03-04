@@ -137,6 +137,25 @@
   opacity: 1;
 }
 
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.delete-btn button {
+  background-color: #dc262625;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-btn button:hover {
+  background-color: #b91c1c5b;
+}
+
 .book-info {
   position: absolute;
   bottom: 25px;

@@ -1,6 +1,5 @@
 const books = [
   {
-    id: 1,
     title: "Principito",
     author: "Antoine de Saint-Exupéry",
     date: "1943",
@@ -11,7 +10,6 @@ const books = [
       "En mis años más vulnerables, mi padre me dio un consejo que no ha dejado de darme vueltas en la cabeza desde entonces. «Cuando sientas deseos de criticar a alguien —me dijo—, recuerda simplemente que no todo el mundo ha tenido las ventajas que tú has tenido». No dijo nada más, pero siempre hemos sido inusualmente comunicativos a nuestra manera reservada, y comprendí que el consejo encerraba un significado mucho más amplio. Como consecuencia, tiendo a reservarme todos mis juicios, un hábito que me ha abierto el camino hacia muchas naturalezas curiosas y que también me ha convertido en víctima de unos cuantos pelmazos veteranos. ",
   },
   {
-    id: 2,
     title: "Metamorfosis",
     author: "Franz Kafka",
     date: "1915",
@@ -22,7 +20,6 @@ const books = [
       "Cuando Gregorio Samsa se despertó una mañana después de un sueño intranquilo, se encontró sobre su cama convertido en un monstruoso insecto. Estaba tumbado sobre su espalda, que resultaba ser dura como una coraza, y al levantar un poco la cabeza veía su vientre abombado, oscuro y segmentado, sobre el cual la colcha, a punto de resbalar al suelo, apenas se sostenía. Sus muchas patas, ridículamente pequeñas en comparación con el resto de su cuerpo, le ofrecían un espectáculo desconcertante. «¿Qué me ha pasado?», pensó. No era un sueño. Su habitación, una habitación propiamente dicha, aunque algo pequeña, estaba tranquila y yacía entre las cuatro paredes bien conocidas. Por la ventana entraba la luz de la mañana —se veían los rayos grises—, pero en general el ambiente era somnoliento. «¿Cuánto tiempo llevo dormido?», se preguntó. «¿Habré hecho perder el tiempo a la oficina?». Era un viajante de comercio y la pereza le hacía perder el tren de las cinco. Si seguía así, el jefe le llamaría la atención; el viejo criado, además, no lo despertaría con amabilidad. El insecto se agitó un poco, pero no podía moverse; estaba atrapado en la cama por la colcha, que parecía demasiado pesada. «Qué lástima —pensó—, qué trabajo me cuesta girar sobre mí mismo; si tan solo fuera más fuerte».",
   },
   {
-    id: 3,
     title: "Frankenstein",
     author: "Mary Shelley",
     date: "1818",
@@ -33,7 +30,6 @@ const books = [
       "La historia sigue a Victor Frankenstein, un joven y ambicioso científico que, obsesionado con la idea de desafiar a la muerte, crea una criatura a partir de partes de cadáveres. Sin embargo, al ver el resultado de su experimento, se horroriza y abandona a su creación. La criatura, sola y rechazada por todos debido a su apariencia monstruosa, busca comprensión y amor, pero solo encuentra odio y miedo. A medida que su soledad y desesperación crecen, la criatura se convierte en un ser vengativo que decide destruir todo lo que Victor ama. La novela explora temas profundos como la ambición desmedida, la responsabilidad del creador, la naturaleza humana, el prejuicio y la soledad.",
   },
   {
-    id: 4,
     title: "Napoleón",
     author: "Max Gallo",
     date: "1997",

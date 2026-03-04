@@ -1,14 +1,18 @@
 import express from "express";
-import { getAllBooks, createBook } from "../models/books.js";
+import { getAllBooks, createBook, deleteBook } from "../models/books.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  const books = getAllBooks();
-  res.status(200).json(books);
+router.get("/", async (req, res) => {
+  try {
+    const books = await getAllBooks();
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { title, author, cover, genre, content } = req.body;
 
@@ -19,7 +23,7 @@ router.post("/", (req, res) => {
       });
     }
 
-    createBook(title, author, genre, cover, content);
+    await createBook(title, author, genre, cover, content);
 
     res.status(201).json({
       success: true,
@@ -32,6 +36,23 @@ router.post("/", (req, res) => {
       error: error.message || "Failed to create book",
       details: process.env.NODE_ENV === "development" ? error.stack : undefined,
     });
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await deleteBook(id);
+    if (!result) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Book not found" });
+    }
+    res
+      .status(200)
+      .json({ success: true, message: "Book deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 

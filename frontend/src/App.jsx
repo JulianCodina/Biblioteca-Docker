@@ -24,7 +24,7 @@ function App() {
             id: i + 1,
             title: `Libro ${i + 1} (Prueba)`,
             author: `Autor ${i + 1}`,
-            date: "01/01/2022",
+            date: "2022",
             genre: "ficción",
             cover:
               "https://static.vecteezy.com/system/resources/thumbnails/008/513/521/small/stack-of-books-illustration-png.png",
@@ -57,6 +57,16 @@ function App() {
       setShowModal("");
     } catch (error) {
       console.error("Error al crear el libro:", error);
+    }
+  };
+
+  const deleteBook = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/books/${id}`);
+      const books = await axios.get(`http://localhost:3000/books`);
+      setBooks(books.data);
+    } catch (error) {
+      console.error("Error al eliminar el libro:", error);
     }
   };
 
@@ -97,6 +107,14 @@ function App() {
               >
                 <div className={`book-cover grad-${index % 10}`}>
                   <img src={book.cover} alt={book.title} />
+                </div>
+                <div
+                  className="delete-btn"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button onClick={() => deleteBook(book._id)}>
+                    <p>🗑️</p>
+                  </button>
                 </div>
                 <div className="book-info">
                   <h3>{book.title}</h3>
