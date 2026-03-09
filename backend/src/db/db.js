@@ -4,7 +4,7 @@ import booksData from "./data.js";
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(process.env.MONGO_URL);
     console.log(`MongoDB conectado: ${conn.connection.host}`);
 
     const count = await Book.countDocuments();

@@ -147,13 +147,16 @@
   background-color: #dc262625;
   border: none;
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 }
 
 .delete-btn button:hover {
-  background-color: #b91c1c5b;
+  background-color: #ff00007d;
+}
+.book-card:has(.delete-btn button:hover) .book-cover img {
+  opacity: 1;
 }
 
 .book-info {
