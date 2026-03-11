@@ -1,5 +1,7 @@
 # 🐳 Practica Docker
 
+![Preview](preview.jpg)
+
 Proyecto para aprender la dockerización de una aplicación Full Stack (React, Node.js, MongoDB).
 
 ## ✅ Prerrequisitos
